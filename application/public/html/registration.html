@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>$Title$</title>
+    <link rel="stylesheet" type="text/css" href="../css/registration1.css" />
 </head>
 <body>
     <header>
-        <h1>CSC 317 Website</h1>
+        <h1>Video Gallery</h1>
         <h2>Registration Page</h2>
         <nav>
             <ul>
@@ -20,29 +21,36 @@
         </nav>
     </header>
     <main>
-        <h3>Registration Form</h3>
+        <div class="form">
         <form>
-            <fieldset>
-                <legend>Customer Account Information</legend>
-                <label for="username">Username</label>
-                <input type="text" id="username">
-                <label for="email">Email</label>
-                <input type="text" id="email">
-                <br>
-                <label for="password">Password</label>
-                <input type="password" id="password">
-                <label for="confirmpassword">Confirm Password</label>
-                <input type="password" id="confirmpassword">
-                <br>
-                <input type ="checkbox" id="age">
-                <label for="age">I am 13 years or older</label>
-                <br>
-                <input type ="checkbox" id="privacy">
-                <label for="privacy">I accept the <a href="#">TOS and Privacy Rules</a></label>
-                <br>
-                <input type ="submit" value="Submit">
-            </fieldset>
+            <div class="fieldset">
+                <fieldset>
+                    <h3>Create Your Account Here</h3>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                    <br>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Email">
+                    <br>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <br>
+                    <label for="confirmpassword">Confirm Password</label>
+                    <input type="password" id="confirmpassword" name="confirmpasssword" placeholder="Confirm Password">
+                    <br>
+                    <input type ="checkbox" id="age">
+                    <label for="age">I am 13 years or older</label>
+                    <br>
+                    <input type ="checkbox" id="privacy">
+                    <label for="privacy">I accept the <a href="#">TOS and Privacy Rules</a></label>
+                    <br>
+                    <input type ="submit" value="Register">
+                    <br>
+                </fieldset>
+            </div>
         </form>
+        </div>
+
     </main>
     <footer>Rathang Pandit &copy; 2023</footer>
 </body>

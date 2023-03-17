@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/postvideo1.css"/>
 </head>
 <body>
     <header>
-        <h1>CSC 317 Website</h1>
-        <h2>PostVideo Page</h2>
+        <h1>Video Gallery</h1>
+        <h2>Post Video</h2>
         <nav>
             <ul>
                 <li><a href = "index.html">Home</a></li>
@@ -20,29 +21,32 @@
         </nav>
     </header>
     <main>
-        <h3>PostVideo Form</h3>
+        <div class="form">
         <form>
+            <div class="fieldset">
             <fieldset>
+                <h3>Post Videos</h3>
                 <label for="posttitle">Post Title:</label>
                 <br>
-                <input type="text" id="posttitle">
+                <input type="text" id="posttitle" placeholder="Post Title">
                 <br>
                 <br>
                 <label for="postdesc">Post Description:</label>
                 <br>
-                <input type="text" id="postdesc">
+                <input type="text" id="postdesc" placeholder="Post Description">
                 <br>
                 <br>
                 <label for="postvideo">Upload</label>
+                <br>
                 <input type="file" id="postvideo" accept="video/*">
-                <br>
-                <br>
-                <input type ="checkbox" id="acceptUsePolicy">
+                <input type ="checkbox" id="acceptUsePolicy" required>
                 <label for="acceptUsePolicy">I accept the Acceptable Use Policy</label>
                 <br>
                 <input type ="submit" value="Submit Video">
             </fieldset>
+            </div>
         </form>
+        </div>
     </main>
     <footer>Rathang Pandit &copy; 2023</footer>
 </body>

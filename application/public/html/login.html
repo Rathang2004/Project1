@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>$Title$</title>
+    <link rel="stylesheet" type="text/css" href="../css/login1.css" />
 </head>
 <body>
     <header>
-        <h1>CSC 317 Website</h1>
+        <h1>Video Gallery</h1>
         <h2>Login Page</h2>
         <nav>
             <ul>
@@ -20,16 +21,23 @@
         </nav>
     </header>
     <main>
-        <h3>Login Form</h3>
-        <form>
-            <label for="username">Username</label>
-            <input type ="text" name ="username" id ="username" placeholder="Username">
-            <br>
-            <label for="password">Password</label>
-            <input type ="password" name="password" id="password" placeholder="Password">
-            <br>
-            <input type ="submit" value="Submit">
-        </form>
+        <div class="form">
+            <h3>Sign into your Account</h3>
+            <form>
+                <label for="username">Username</label>
+                <input type ="text" name ="username" id ="username" placeholder="Username">
+                <br>
+                <label for="password">Password</label>
+                <input type ="password" name ="password" id ="password" placeholder="Password">
+                <br>
+                <input type ="submit" value="Login">
+                <br>
+                <br>
+                <div class="signup-link">
+                    Not a member yet? <a href = "registration.html">Sign Up</a>
+                </div>
+                </form>
+        </div>
     </main>
     <footer>Rathang Pandit &copy; 2023</footer>
 </body>

@@ -1,0 +1,138 @@
+body
+{
+    background: linear-gradient(140deg,#006699,#993399);
+}
+h1
+{
+    color: white;
+    font-family: "sans-serif";
+}
+h2
+{
+    text-align: center;
+    color: white;
+    font-family: "sans-serif";
+}
+h3
+{
+    text-align: center;
+    color: #000066;
+    font-family: "sans-serif";
+    font-size: 24px;
+}
+nav ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+nav li
+{
+    display: inline-block;
+}
+nav a
+{
+    width:100px;
+    display: block;
+    padding: 25px 67px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: underline;
+}
+nav a:hover
+{
+    background: white;
+    color: black;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+fieldset
+{
+    border:none;
+}
+form
+{
+    text-align: left;
+    background-color: white;
+    padding-right: -1px;
+    width: 26cm;
+    align-items: center;
+    justify-content: center;
+    margin-left: 240px;
+    border:none;
+    border-radius: 10px;
+}
+label
+{
+    width: 200px;
+    display: inline-block;
+    margin: 0.5cm;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000066;
+    border-spacing: 30px;
+    background-color: #CBC3E3;
+    text-align: center;
+    border-radius: 30px;
+}
+label[for="age"]
+{
+    text-align: left;
+    font-size: 20px;
+    margin-left: -543px;
+    width: 230px;
+    background-color: transparent;
+
+}
+label[for="privacy"]
+{
+    font-size: 20px;
+    width: 310px;
+    text-align: right;
+    margin-left: -550px;
+    background-color: transparent;
+
+}
+input
+{
+    padding: 4px;
+    margin: 5px;
+    font-size: 16px;
+    border: 1px solid black;
+    width: 16cm;
+}
+input[type=submit]
+{
+    margin-top: 100px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #000066;
+    text-align: center;
+    margin-left: 160px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+input[type=submit]:hover
+{
+    background: linear-gradient(140deg,#006699,#993399);
+    color: white;
+}
+footer
+{
+    clear: both;
+    position: relative;
+    height: 40px;
+    margin-top: 100px;
+    color: black;
+    padding-top: 10px;
+    padding-left: 5px;
+    background-color: white;
+    text-align: center;
+    margin-bottom: -10px;
+    font-size: 20px;
+}

@@ -1,0 +1,115 @@
+body
+{
+    background: linear-gradient(140deg,#006699,#993399);
+}
+h1
+{
+    color: white;
+    font-family: "sans-serif";
+}
+h2
+{
+    text-align: center;
+    color: white;
+    font-family: "sans-serif";
+}
+h3
+{
+    text-align: center;
+    font-size: 24px;
+    color: #000066;
+    margin-block-start: -160px;
+    margin-bottom: 100px;
+}
+nav ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+nav li
+{
+    display: inline-block;
+}
+nav a
+{
+    width:100px;
+    display: block;
+    text-decoration: underline;
+    padding: 25px 67px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+    font-family: sans-serif;
+}
+nav a:hover
+{
+    background: white;
+    color: black;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+div.form
+{
+    text-align: center;
+    background-color: white;
+    width: 12cm;
+    padding: 180px 15px;
+    border-radius: 10px;
+    margin-left: 480px;
+    padding-bottom: 160px;
+    position: absolute;
+}
+label
+{
+    width: 140px;
+    display: inline-block;
+    margin: 0.3cm;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #CBC3E3;
+    color: #000066;
+    border-radius: 50px;
+
+}
+input
+{
+    padding: 4px;
+    margin: 5px;
+    font-size: 16px;
+    border: 1px solid black;
+    width: 6cm;
+}
+input[type=submit]
+{
+    margin-top: 100px;
+    color: white;
+    font-weight: bold;
+    padding: 4px;
+    background-color: #000066;
+    text-align: center;
+    border-radius: 10px;
+
+}
+input[type=submit]:hover
+{
+    background: linear-gradient(140deg,#006699,#993399);
+    color: white;
+}
+footer
+{
+    clear: both;
+    position: relative;
+    height: 40px;
+    margin-top: 600px;
+    color: black;
+    padding-top: 10px;
+    padding-left: 5px;
+    background-color: white;
+    text-align: center;
+    margin-bottom: -10px;
+    font-size: 20px;
+}
