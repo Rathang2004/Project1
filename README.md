@@ -11,9 +11,8 @@ Please follow the instructions below and fill in the information requested when 
 |               | Information   |
 |:-------------:|:-------------:|
 | Student Name  | Rathang Pandit     |
-| Student ID    | 922552914      |
-| Student Email | rpandit@sfsu.edu  |
-
+| Student ID    | 922552914       |
+| Student Email | rpandit@sfsu.edu    |
 
 
 # Build/Run Instructions
