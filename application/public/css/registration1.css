@@ -122,6 +122,14 @@ input[type=submit]:hover
     background: linear-gradient(140deg,#006699,#993399);
     color: white;
 }
+.input-control
+{
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+}
+
 footer
 {
     clear: both;
