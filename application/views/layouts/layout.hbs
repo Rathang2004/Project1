@@ -2,10 +2,14 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
-    <link rel='stylesheet' href='/public/css/style.css' />
+      <meta charset="UTF-8">
+      <title>$Title$</title>
+      <link rel="stylesheet" type="text/css" href="/public/css/{{css}}"/>
   </head>
   <body>
+    {{> header}}
     {{{body}}}
+    {{> footer}}
   </body>
+    <script defer src="/public/js/{{js}}"></script>
 </html>
