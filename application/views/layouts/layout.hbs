@@ -7,9 +7,14 @@
       <link rel="stylesheet" type="text/css" href="/public/css/{{css}}"/>
   </head>
   <body>
+    <div id="container">
+        {{# if (nonEmptyObject messages)}}
+            {{> flashmessage this}}
+        {{/if}}
     {{> header}}
     {{{body}}}
     {{> footer}}
+    </div>
   </body>
     <script defer src="/public/js/{{js}}"></script>
 </html>

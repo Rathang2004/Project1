@@ -40,7 +40,7 @@ function validateForm()
     validateConfirmPassword();
     if (document.querySelectorAll('.success').length === 4) {
         // submit the form
-        form.submit();
+        form.suobmit();
     }
 }
 function validateUsername()

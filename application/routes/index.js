@@ -14,11 +14,6 @@ router.get("/registration",function (req,res){
 router.get("/postvideo",function (req,res){
   res.render('postvideo', {title: "Post Video Page", css: ['postvideo1.css']});
 });
-
-router.get("/profile", function(req,res){
-  res.render('profile', {title: "Profile Page", css: ['profile1.css']});
-});
-
 router.get("/viewpost",function (req,res){
   res.render('viewpost', {title: "View Post Page", css: ['viewpost1.css']});
 });

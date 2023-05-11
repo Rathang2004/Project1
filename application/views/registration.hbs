@@ -1,7 +1,7 @@
 <main>
     <div class="form">
     <div id="error"></div>
-    <form id="form">
+    <form id="form" action="/users/registration" method="POST" enctype="application/x-www-form-urlencoded">
        <div class="fieldset">
            <fieldset>
                <h3>Create Your Account Here</h3>
@@ -29,10 +29,10 @@
                     <div  class="error"></div>
                </div>
                     <br>
-                    <input type ="checkbox" id="age" required>
+                    <input type ="checkbox" id="age" name="ageCheck" required>
                     <label for="age">I am 13 years or older</label>
                     <br>
-                    <input type ="checkbox" id="privacy" required>
+                    <input type ="checkbox" id="privacy" name="tosCheck" required>
                     <label for="privacy">I accept the <a href="#">TOS and Privacy Rules</a></label>
                     <br>
                     <input type ="submit" value="Register">
