@@ -44,6 +44,10 @@ function validateForm()
         form.submit();
     }
 }
+
+/**
+ * changed spelling
+ */
 function validateUsername()
 {
     if((username.value === "") || (username.value === null))
