@@ -38,9 +38,10 @@ function validateForm()
     validatePassword();
     validateEmail();
     validateConfirmPassword();
-    if (document.querySelectorAll('.success').length === 4) {
+    if (document.querySelectorAll('.success').length === 4)
+    {
         // submit the form
-        form.suobmit();
+        form.submit();
     }
 }
 function validateUsername()
