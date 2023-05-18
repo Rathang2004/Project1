@@ -1,22 +1,22 @@
 <main>
      <div class="form">
-        <form>
+        <form action = "/posts/create" method="POST" enctype="multipart/form-data">
             <div class="fieldset">
             <fieldset>
                 <h3>Post Videos</h3>
                 <label for="posttitle">Post Title:</label>
                 <br>
-                <input type="text" id="posttitle" placeholder="Post Title">
+                <input name="title" type="text" id="posttitle" placeholder="Post Title">
                 <br>
                 <br>
                 <label for="postdesc">Post Description:</label>
                 <br>
-                <input type="text" id="postdesc" placeholder="Post Description">
+                <input name="description" type="text" id="postdesc" placeholder="Post Description">
                 <br>
                 <br>
                 <label for="postvideo">Upload</label>
                 <br>
-                <input type="file" id="postvideo" accept="video/*">
+                <input name="uploadVideo" type="file" id="postvideo" accept="video/*">
                 <input type ="checkbox" id="acceptUsePolicy" required>
                 <label for="acceptUsePolicy">I accept the Acceptable Use Policy</label>
                 <br>

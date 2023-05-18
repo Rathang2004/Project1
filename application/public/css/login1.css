@@ -7,6 +7,11 @@ h1
     color: white;
     font-family: "sans-serif";
 }
+input[id="search-text"]
+{
+    width: 180px;
+    border-radius: 10px;
+}
 h2
 {
     text-align: center;
@@ -24,9 +29,10 @@ h3
 nav ul
 {
     list-style: none;
-    padding: 0;
+    padding: -50px;
     margin: 0;
     text-align: center;
+    margin-top: -100px;
 }
 nav li
 {
@@ -94,11 +100,31 @@ input[type=submit]
     border-radius: 10px;
 
 }
+button[type="submit"]
+{
+    margin-top: 100px;
+    color: white;
+    font-weight: bold;
+    padding: 4px;
+    background-color: #000066;
+    text-align: center;
+    width: 130px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    border: 1px solid black;
+}
 input[type=submit]:hover
 {
     background: linear-gradient(140deg,#006699,#993399);
     color: white;
 }
+button[type="submit"]:hover
+{
+    background: linear-gradient(140deg,#006699,#993399);
+    color: white;
+}
+
 footer
 {
     clear: both;

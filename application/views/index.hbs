@@ -2,4 +2,7 @@
     <p id="display">Number of Photos:</p>
     <p id="display1"></p>
     <div id="product-list" class="product-list"></div>
+    {{#each posts}}
+        {{> card this}}
+        {{/each}}
 </main>

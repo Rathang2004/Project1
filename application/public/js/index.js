@@ -1,4 +1,4 @@
-var url = 'https://jsonplaceholder.typicode.com/albums/2/photos/';
+/**var url = 'https://jsonplaceholder.typicode.com/albums/2/photos/';
 
     document.getElementById("display").innerHTML = 'Number of Photos: <br><br> 50';
     function fadeOut(ev)
@@ -48,6 +48,7 @@ async function fetchWithDOMAPI()
     }
 }
 fetchWithDOMAPI();
+ **/
 
 
 
