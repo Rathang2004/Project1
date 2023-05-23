@@ -3,7 +3,7 @@ var router = express.Router();
 var multer = require('multer');
 var db = require('../conf/database');
 const {isLoggedIn} = require('../middleware/auth');
-const {makeThumbnail, getRecentPosts} = require("../middleware/posts");
+const {makeThumbnail, getRecentPosts, getPostsById, getCommentsForPostId} = require("../middleware/posts");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -58,7 +58,7 @@ router.post("/create",isLoggedIn , upload.single("uploadVideo"), makeThumbnail, 
     }
 });
 
-router.get("/:id(\\d+)", isLoggedIn, function (req,res){
+router.get("/:id(\\d+)", isLoggedIn, getPostsById, getCommentsForPostId, function (req,res){
     res.render('viewpost', {title: "View Post Page", css: ['viewpost1.css']});
 });
 
@@ -90,13 +90,24 @@ router.get("/search", async function(req,res,next)
 });
 
 
-router.delete("/delete", function (req,res,next)
+router.post("/delete/:id(\\d+)", getPostsById, getCommentsForPostId, async function (req,res,next)
 {
-
+    var id = req.params.id;
+    try
+    {
+        await db.execute(`DELETE FROM comments WHERE fk_postId =?`,[id]).then(
+        await db.execute(`DELETE FROM posts WHERE id =?`,[id]));
+            req.flash("success","Post has been deleted successfully");
+        return res.redirect("/");
+    }
+    catch(error)
+    {
+        next(error);
+    }
 });
 
 router.get("/", function (req,res,next){});
-router.delete("/", function (req,res,next){});
+//router.delete("/", function (req,res,next){});
 router.put("/", function (req,res,next){});
 router.patch("/", function (req,res,next){});
 

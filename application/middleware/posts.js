@@ -1,5 +1,5 @@
 var pathToFFMPEG = require('ffmpeg-static');
-const db = require("../conf/database");
+var db = require("../conf/database");
 var exec = require('child_process').exec;
 module.exports = {
     makeThumbnail: function(req,res,next)
@@ -24,24 +24,58 @@ module.exports = {
 
         }
     },
-    getPostsForUser: function (req,res,next)
-    {},
-    getPostsById: function (req,res,next)
+    getPostsForUser: async function (req,res,next)
     {
-        let postId = req.params.id;
-        let baseSQl = `SELECT p.id, p.title, p.description, p.image, p.createdAt, u.username
-        From posts p
-        JOIN users uON p.fk_authorID=u.id
-        WHERE p.id=?;`;
-        db.query(baseSQl,[postId])
-            .then(function ([results,fields])
-            {
-                res.locals.currentPost=results[0];
-            })
-        next();
+
     },
-    getCommentsForPostId: function (req,res,next)
-    {},
+    getPostsById: async function (req,res,next)
+    {
+        var {id} = req.params;
+        try
+        {
+            let [rows,_] = await db.execute(
+                `select u.username, p.video, p.title, p.description, p.id, p.createdAt
+                 from posts p 
+                 JOIN users u
+                 ON p.fk_userId=u.id
+                 WHERE p.id=?;`,
+                 [id]);
+            const post = rows[0];
+            if(!post)
+            {
+            }
+            else
+            {
+                res.locals.currentPost = post;
+                next();
+            }
+        }
+        catch (error)
+        {
+            next(error);
+        }
+    },
+    getCommentsForPostId: async function (req,res,next)
+    {
+        var {id} = req.params;
+        try
+        {
+            let [rows,_] = await db.execute(
+                `SELECT u.username, c.textCom, c.createdAt
+                 FROM comments c 
+                 JOIN users u
+                 ON c.fk_authorId=u.id
+                 WHERE c.fk_postId=?;`,
+                 [id]
+            );
+            res.locals.currentPost.comments = rows;
+            next();
+        }
+        catch (error)
+        {
+            next(error);
+        }
+    },
     getRecentPosts: async function (req,res,next)
     {
         try

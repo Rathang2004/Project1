@@ -38,9 +38,10 @@ const {response} = require("express");
 
 
 //localhost:3000/users/registration
-router.post('/registration', usernameCheck, /**passwordCheck,**/ emailCheck,/** tosCheck, ageCheck,**/ /**isUsernameUnique,**/ /**isEmailUnique,**/ async function(req,res,next)
+router.post('/registration', usernameCheck, emailCheck, passwordCheck, tosCheck, ageCheck, isUsernameUnique, isEmailUnique, async function(req,res,next)
 {
     var {username,email,password} = req.body;
+    console.log(req.body)
     // check if username is unique
     try
     {

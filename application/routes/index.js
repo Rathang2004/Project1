@@ -5,7 +5,7 @@ const db = require("../conf/database");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', getRecentPosts,async function(req, res, next)
+router.get('/', getRecentPosts, async function(req, res, next)
 {
   res.render('index', { title: 'CSC 317 App', name:"Rathang Pandit", css:["index1.css"], js:['index.js']});
 });

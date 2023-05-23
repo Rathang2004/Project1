@@ -1,15 +1,65 @@
-<main>
+<main class="post-container">
     <div class="container">
         <h3>Videos</h3>
-        <div class="videoAuthor">Author: Rathang Pandit</div>
-        <div class="videoTime">Created on: February 27th, 2023 12:00:00</div>
-        <img src="https://fakeimg.pl/350x200/?text=Video">
-        <div class="commentSection">Comments:</div>
-        <ul>
-            <li>Joe: Great Post</li>
-            <li>Jack: I really like the visuals</li>
-            <li>Brian: What camera did you use for the picture?</li>
-        </ul>
+        <div class="videoTitle">Post: {{currentPost.title}}</div>
+        <div class="videoAuthor">Username: {{currentPost.username}}</div>
+        <video class="video-container" controls>
+            <source src = "/{{currentPost.video}}" type="video/mp4" />
+        </video>
+        <div class="videoDescription">Description: {{currentPost.description}}</div>
         <br>
+        <div class="videoTime">Created At: {{currentPost.createdAt}}</div>
+        <br>
+        <div class="comment-section">
+            <div class="comment-box">
+                <textarea id="comment-text" class="comment-box-text" placeholder="Type your comment here"></textarea>
+                <i
+                        id="comment-button"
+                        class="fa fa-comment comment-box-button"
+                        aria-hidden="true"
+                        data-postid="{{currentPost.id}}"
+                ></i>
+                <br>
+                <button type="submit" id="comment-submit">Submit</button>
+            </div>
+        </div>
+        <div class="comments">
+            {{# each currentPost.comments}}
+                <div class="comment">
+                    <strong class="comment-author">{{this.username}}</strong>
+                    <span class="comment-date">{{this.createdAt}}</span>
+                    <div class="comment-text">{{this.textCom}}</div>
+                </div>
+            {{/each}}
+        </div>
     </div>
+    <script>
+        document.getElementById('comment-submit').addEventListener('click',function (ev)
+        {
+            console.log("bye1")
+            let commentText = document.getElementById("comment-text").value;
+            if(!commentText) return;
+            let postId = ev.currentTarget.dataset.id;
+            console.log("bye2")
+            fetch("/comments/create",
+            {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(
+                        {
+                            postId: postId,
+                            commentText: commentText
+                        }
+                )
+            });
+            console.log("bye3")
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(err => console)
+        })
+    </script>
 </main>
+
+
