@@ -26,7 +26,31 @@ module.exports = {
     },
     getPostsForUser: async function (req,res,next)
     {
-
+        var {userId} = req.session.user;
+        try
+        {
+            var [rows,_] = await db.execute(
+                `SELECT * FROM posts WHERE fk_userId=?;`,
+                [userId]
+            );
+            if(rows && rows.length == 0)
+            {
+                req.flash("error", "You don't have any posts to delete");
+                next();
+                return res.render("profile");
+            }
+            else
+            {
+               res.locals.posts = rows;
+               req.flash("success","Your account has atleast one existing post");
+               next();
+               return res.render("profile");
+            }
+        }
+        catch (error)
+        {
+            next(error);
+        }
     },
     getPostsById: async function (req,res,next)
     {

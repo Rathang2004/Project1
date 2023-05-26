@@ -2,16 +2,14 @@
         <div class="container">
             <h3>Profile Information:</h3>
             <div class="grid-container">
-                <div class="username">Username: Rathang@2004</div>
-                <div class="email">Email: rpandit@sfsu.edu</div>
-            </div>
+                <div class="username">Username: {{user.username}}</div>
+                <div class="email">Email: {{user.email}}</div>
             <br>
-            <div class="postList">List of Past Posts:</div>
-                <ul>
-                    <li><a href="#">Nature Post</a></li>
-                    <li><a href="#">Bike Race Post</a></li>
-                    <li><a href="#">Safari Post</a></li>
-                    <li><a href="#">Halloween Post</a></li>
-                </ul>
+            <div class="postList">
+                {{#each posts}}
+                    {{> cardProfile this}}
+                {{/each}}
+            </div>
+            </div>
         </div>
  </main>

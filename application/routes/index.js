@@ -1,6 +1,6 @@
 var express = require('express');
-const {isLoggedIn} = require("../middleware/auth");
-const {getRecentPosts} = require("../middleware/posts");
+const {isLoggedIn, isMyProfile} = require("../middleware/auth");
+const {getRecentPosts, getPostsForUser} = require("../middleware/posts");
 const db = require("../conf/database");
 var router = express.Router();
 
@@ -15,8 +15,12 @@ router.get("/login",function (req,res){
 router.get("/registration",function (req,res){
   res.render('registration', {title: "Registration Page", css:["registration1.css"], js:["registration.js"]});
 });
-router.get("/postvideo", isLoggedIn,function (req,res){
+router.get("/postvideo", isLoggedIn, function (req,res){
   res.render('postvideo', {title: "Post Video Page", css: ['postvideo1.css']});
+});
+
+router.get("/users/profile/:id(\\d+)", isLoggedIn, isMyProfile, getPostsForUser, function (req,res){
+  res.render('profile', {title: "Profile Page", css:['profile1.css']});
 });
 
 module.exports = router;

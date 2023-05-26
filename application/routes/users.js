@@ -6,6 +6,7 @@ var bcrypt = require('bcrypt');
 var {isLoggedIn, isMyProfile} = require('../middleware/auth');
 const {usernameCheck, isUsernameUnique, passwordCheck, emailCheck, tosCheck, ageCheck, isEmailUnique} = require("../middleware/validation");
 const {response} = require("express");
+const {getPostsForUser} = require("../middleware/posts");
 /* GET localhost:3000/users */
 /**router.get('/', async function(req, res, next)
 {
@@ -124,9 +125,11 @@ router.use(function(req,res,next)
   }
  });
 
-router.get("/profile/:id(\\d+)", isLoggedIn, isMyProfile, function(req,res){
-    res.render('profile', {title: "Profile Page", css: ['profile1.css']});
+router.post("/profile/:id(\\d+)", isLoggedIn, isMyProfile, getPostsForUser, function(req,res)
+{
+        res.render('profile',{title: "Profile Page", css:['profile1.css']});
 });
+
 
 router.get('/logout',function (req,res,next)
 {

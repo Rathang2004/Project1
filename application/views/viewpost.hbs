@@ -13,19 +13,18 @@
         <div class="comment-section">
             <div class="comment-box">
                 <textarea id="comment-text" class="comment-box-text" placeholder="Type your comment here"></textarea>
-                <i
+                <button
                         id="comment-button"
                         class="fa fa-comment comment-box-button"
                         aria-hidden="true"
-                        data-postid="{{currentPost.id}}"
-                ></i>
+                        data-postId="{{currentPost.id}}"
+                >Submit</button>
                 <br>
-                <button type="submit" id="comment-submit">Submit</button>
             </div>
         </div>
         <div class="comments">
-            {{# each currentPost.comments}}
-                <div class="comment">
+            {{#each currentPost.comments}}
+                <div id="comments" class="comment">
                     <strong class="comment-author">{{this.username}}</strong>
                     <span class="comment-date">{{this.createdAt}}</span>
                     <div class="comment-text">{{this.textCom}}</div>
@@ -34,13 +33,12 @@
         </div>
     </div>
     <script>
-        document.getElementById('comment-submit').addEventListener('click',function (ev)
+        document.getElementById("comment-button").addEventListener('click',function (ev)
         {
-            console.log("bye1")
             let commentText = document.getElementById("comment-text").value;
             if(!commentText) return;
-            let postId = ev.currentTarget.dataset.id;
-            console.log("bye2")
+            console.log(ev.currentTarget.dataset.postid);
+            let postId = ev.currentTarget.dataset.postid;
             fetch("/comments/create",
             {
                 method: "POST",
@@ -51,14 +49,27 @@
                             commentText: commentText
                         }
                 )
-            });
-            console.log("bye3")
+            })
                     .then(response => response.json())
                     .then(data => {
                         console.log(data);
+                        var comments = document.getElementById("comments");
+                        let commentFragment = document.createElement("template");
+                        commentFragment.innerHTML = `<div class="comment"
+                        <strong class="comment-author">${data.username}</strong>
+                        <span class="comment-date">${(new Date()).toLocaleString(
+                            "en-us",{
+                                dateStyle: "long",
+                                timeStyle: "medium"
+                                })}
+                        </span>
+                            <div class="comment-text">${data.commentText}</div>
+                            </div>`;
+                        comments.append(commentFragment.content.firstChild);
+
                     })
                     .catch(err => console)
-        })
+        });
     </script>
 </main>
 

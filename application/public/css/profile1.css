@@ -86,22 +86,16 @@ nav a:hover
 div.container
 {
 
-    width: 600px;
+    width: 800px;
     padding: 80px 200px;
-    text-align: left;
     background-color: white;
     align-items: center;
     justify-content: center;
-    margin-left: 215px;
     padding-top: 10px;
     margin-top: 10px;
     margin-bottom: 160px;
-}
-div.grid-container
-{
-    display: grid;
-    padding-left: 60px;
-    grid-template-columns: 1fr 1fr;
+    margin-left: 100px;
+
 }
 div.username
 {
@@ -110,7 +104,8 @@ div.username
     font-weight: bold;
     text-decoration: underline;
     color: #993399;
-    text-align: left;
+    text-align: center;
+    justify-content: center;
 }
 div.email
 {
@@ -118,20 +113,9 @@ div.email
     font-weight: bold;
     text-decoration: underline;
     color: #993399;
-
-}
-div.postList
-{
-    list-style: none;
-    padding: 0;
-    margin: 0;
     text-align: center;
-    padding-bottom: 40px;
-    padding-top: 30px;
-    font-size: 25px;
-    color: #000066;
-    text-decoration: underline;
-    font-weight: bold;
+    justify-content: center;
+
 }
 main li
 {
@@ -141,12 +125,37 @@ main li
     padding-left: 20px;
 
 }
+div.postList
+{
+    width: 90%;
+    margin: 12vh 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(5,200px);
+    row-gap: 15px;
+    column-gap: 15px;
+    justify-content: center;
+    background-color: white;
+    padding-top: 30px;
+    margin-top: 15px;
+    padding-bottom: 30px;
+}
+.product-img
+{
+    margin-left: 5px;
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
 footer
 {
     clear: both;
     position: relative;
     height: 50px;
-    margin-top: 200px;
+    margin-top: 300px;
     color: black;
     padding-top: 10px;
     padding-left: 5px;

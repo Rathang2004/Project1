@@ -63,9 +63,15 @@ div.container
     margin-left: 91px;
     padding-top: 10px;
     margin-top: 10px;
-    height: 1100px;
+    height: auto;
 }
-
+div.comments
+{
+    text-align: right;
+    width: 800px;
+    height: auto;
+    color: black;
+}
 video
 {
     width: 600px;
@@ -134,7 +140,7 @@ button[id="search-submit"]
     font-size: 16px;
     border: 1px solid black;
 }
-button[id="comment-submit"]
+button[id="comment-button"]
 {
     background-color: #000066;
     font-size: 16px;

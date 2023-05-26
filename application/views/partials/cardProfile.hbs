@@ -1,0 +1,16 @@
+<div class="product-card">
+
+    {{log this}}
+    <div class="product-info">
+        <a href='/posts/{{id}}'><img class="product-img" src="/{{thumbnails}}">
+            <p class="product-title">{{title}}</p>
+            <details>
+                <summary style="font-size: 10px;">Post Details</summary>
+                <p>
+                    {{description}}
+                </p>
+            </details>
+            <form class="delete-but" method="POST" action="/posts/delete/{{id}}">
+            <button type="submit" class="deleteB" id="delete">Delete</button></form>
+        </a></div>
+</div>
